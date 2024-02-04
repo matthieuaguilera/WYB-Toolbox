@@ -50,13 +50,35 @@ Videos with different zoom ratio or with the apparatus a bit moved can thus be c
 ### Extract the mean position of the animal: the baricenter
 
 The baricenter will be the "average" of the skeleton, used to have the global position and speed of the animal in the apparatus but also further used to normalize the skeleton to have the "posture" of the animal.
-Two specific points need to be choose:
-- the "Center" point, which be the one considered at the most central point of the animal (e.g. the body)
-- the "Orientation" point (e.g. the neck), which is one that will ix the orientation of the animal at each frames by a "center" "orientation" vector
+Two specific bodyparts points need to be choose:
+- the 'Central_bodypart, which be the bodypart considered at the most central point of the animal (e.g. the body)
+- the "Orientation" bodypart (e.g. the neck), which is one that will fix the orientation of the animal at each frames by a "center" "orientation" vector
+Central and Orientation Bodyparts need to be bodyparts listed in the 'Bodyparts' vector from the begining of the pipeline.
 The baricenter will be the average of these 2 points
 
 ```
-wyb_get_baricenter(Project_Path, 'Body', 'Neck');
+wyb_get_baricenter(Project_Path, 'Central_Bodypart', 'Orientation_Bodypart');
+```
+
+### Compute Baricenter cinetic
+
+```
+wyb_get_cinetic(Project_Path);
+```
+This will compute speed and acceleration of the baricenter. It will also compute the angel, angular speed and angular acceleration.
+
+### Get posture coordinates
+
+```
+wyb_baricenter_realignment(Project_Path);
+```
+This will allow to normalize each bodyparts coordinates by the baricenter and align it with the orientation fixed. New coordiantes for each bodyparts are thus created that are "posture" coordinates, meaning movement of the skeleton of the animal without taking into account movement in the environment.
+
+
+
+
+
+
 
 
 
