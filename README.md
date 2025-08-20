@@ -1,6 +1,8 @@
 # WYB-Toolbox
 WYB is a tool to postprocess behavioral data extracted from DeepLabCut to obtain Behavior apparatus normalized coordinates, Animal cinetics in the apparatus and posture normalized coordinates.
 
+This toolbox is described in the Aguilera et al.,2025 paper mentionned at the end of the document in "Reference and Citation"
+
 ## Preparation
 Need to store in a file all your original video in avi or mp4 format
 Need to store in anor-ther file all your csv tables extracted from DeepLabCut
@@ -74,8 +76,9 @@ wyb_baricenter_realignment(Project_Path);
 ```
 This will allow to normalize each bodyparts coordinates by the baricenter and align it with the orientation fixed. New coordiantes for each bodyparts are thus created that are "posture" coordinates, meaning movement of the skeleton of the animal without taking into account movement in the environment.
 
-
-
+## Reference and Citation
+Aguilera M, Mathis C, Herbeaux K, Isik A, Faranda D, Battaglia D, Goutagny R; 40 Hz light stimulation restores early brain dynamics alterations and associative memory in Alzheimer’s disease model mice. Imaging Neuroscience 2025; 3 IMAG.a.70. 
+doi: https://doi.org/10.1162/IMAG.a.70
 
 
 
